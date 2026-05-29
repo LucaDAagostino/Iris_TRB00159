@@ -174,7 +174,7 @@ preparedMenuInfoApplicativo = function (div) {
 handleDivLabel = function (div) {
     if (Boolean(isAppCore) && (Boolean(isProgramAppCore) || Boolean(isWindowAppCore))) {
         if (div.className.includes("A20")) {
-     
+
             div.classList.add("labelField");
 
             if (div.getAttribute('fldname') === 'TEXT') {

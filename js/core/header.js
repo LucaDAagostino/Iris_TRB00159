@@ -105,31 +105,55 @@ setEnvironmentDescription = function () {
   }
 
   const environmentInfo = getDataStorage("environment", "session");
-  if (environmentInfo == null) return;
+
+  if (environmentInfo == null || environmentInfo === "") {
+    environmentDescription?.remove();
+    return;
+  }
 
   if (!environmentDescription) {
     environmentDescription = document.createElement("div");
     environmentDescription.id = "environmentDescription";
+
     if (logoProductName) {
       logoProductName.style.height = "50%";
       logoProductName.style.verticalAlign = "top";
     }
+
     const center = document.getElementById("containerHeaderCenter");
     if (center) center.style.marginTop = "0.2rem";
   }
 
-  const environmentInfoText = environmentInfo.substr(environmentInfo.length - 3, environmentInfo.length);
+  // importante: pulisco sempre il valore precedente
+  environmentDescription.textContent = "";
+
+  const environmentInfoText = environmentInfo.substr(environmentInfo.length - 3);
+
   switch (environmentInfoText.toUpperCase()) {
     case "SVL":
       environmentDescription.textContent = "Sviluppo";
       break;
+
     case "COL":
       environmentDescription.textContent = "Collaudo";
       break;
+
     case "PRD":
-      break;
-    default:
-      environmentDescription.textContent = "Ambiente " + environmentInfo.trim();
+      environmentDescription.remove();
+
+      if (logoProductName) {
+        logoProductName.style.height = null;
+        logoProductName.style.verticalAlign = null;
+      }
+
+      const center = document.getElementById("containerHeaderCenter");
+      if (center) {
+        center.style.marginTop = null;
+      }
+
+      return;
+
+    default: environmentDescription.textContent = "Ambiente " + environmentInfo.trim();
   }
 
   const elementlogoProductName = document.getElementById("elementlogoProductName");

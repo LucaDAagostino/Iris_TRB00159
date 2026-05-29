@@ -323,6 +323,25 @@ div.menu-bar-separator {
   color: #ececec;
 }
 
+#sideBarCompany {
+    color: rgba(255,255,255,.95);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    margin-top: auto;
+}
+
+#sideBarCompany {
+    color: rgb(255 255 255 / 90%);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: var(--bs-color-material-500);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
 /* Evita che il click prenda come target lo <svg>/<path> (bug fix genie.js) */
 .sideBarItemLink .caret,
 .sideBarItemLink .caret * {

@@ -1,7 +1,7 @@
 const APP_VERSION = {
   major: 1,
   minor: 0,
-  patch: 1,
+  patch: 2,
   label: "",
   buildDate: "2026-05-29"
 };

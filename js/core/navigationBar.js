@@ -8,6 +8,11 @@ navigationBar = function () {
 
   refreshHamburgerIcon();
   // normalizeMnemonics();
+
+  let sideBarCompany = document.getElementById("sideBarCompany");
+  if (sideBarCompany) {
+    sideBarCompany.textContent = getDataStorage("company", "session");
+  }
 };
 
 /* --------------------------- MENU BAR --------------------------- */
@@ -292,7 +297,7 @@ buildSidebar = function () {
     sideBarButton.append(iconHamburgerSidebar, srOnly);
     containerSideBarButton.append(sideBarButton);
 
-        const sideBarBackButton = document.createElement("button");
+    const sideBarBackButton = document.createElement("button");
     sideBarBackButton.id = "sideBarBackButton";
     sideBarBackButton.type = "button";
     sideBarBackButton.className = "btn btn-primary sideBarBackButton";
@@ -322,7 +327,7 @@ buildSidebar = function () {
         }
       }
     };
-    
+
     container.append(sideBar, containerSideBarButton);
     container.style.display = "flex";
 
@@ -332,6 +337,15 @@ buildSidebar = function () {
   let currentDate = new Date();
   let sideBarBottom = document.getElementById("sideBarBottom");
   if (!sideBarBottom) return;
+
+  let sideBarCompany = document.getElementById("sideBarCompany");
+  if (!sideBarCompany) {
+    sideBarCompany = document.createElement("div");
+    sideBarCompany.id = "sideBarCompany";
+    sideBarBottom.append(sideBarCompany);
+  }
+  sideBarCompany.textContent = getDataStorage("company", "session") || "";
+
 
   let sideBarToday = document.getElementById("sideBarToday");
   if (!sideBarToday) {
