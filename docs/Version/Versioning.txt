@@ -1,0 +1,5 @@
+1.0.0
+│ │ │
+│ │ └── PATCH = correzioni bug
+│ └──── MINOR = nuove funzionalità compatibili
+└────── MAJOR = modifiche importanti/non compatibili

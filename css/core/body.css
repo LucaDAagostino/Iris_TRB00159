@@ -1,0 +1,432 @@
+#containerMain {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.containerEmulatorOutside {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    transition: all 0.5s ease 0s;
+    flex-grow: 1;
+    padding: 0.125rem 1rem;
+}
+
+.containerEmulatorInside {
+    position: relative;
+    height: calc(100% - 1.25rem);
+    /* outline: 0.625rem solid var(--bs-gray-200); */
+    margin: 0.625rem;
+    overflow: auto;
+    
+}
+
+.containerEmulatorInsideHeaderVariazione {
+    background-color: #bd8800 !important;
+}
+
+.container5250 {
+    position: relative;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    width: 100%;
+}
+
+.headerTitle {
+    color: var(--bs-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+.emulatorDiv {
+    text-align: center;
+    height: auto !important;
+    padding: 0;
+    width: 100% !important;
+}
+
+.containerEmulatorInsideHeader {
+    position: sticky;
+    top: 0;
+    background: var(--bs-color-program-header);
+    z-index: 100;
+    display: flex;
+    min-height: 3.2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+/* Rendi `containerWindowInsideBody` scrollabile */
+.containerEmulatorInsideBody {
+    height: calc(100% - 4rem);
+    flex: 1;
+    padding: 0.5rem 1rem;
+    overflow-y: auto;
+}
+
+.containerEmulatorInsideFooter {
+    position: sticky;
+    bottom: 0;
+    background: var(--bs-color-program-footer);;
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+    height: 2.8rem;
+    z-index: 100;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    
+}
+
+.containerEmulatorInsideFooterText{
+    font-size: 1rem;
+    margin-right: 1.5rem;
+}
+
+.containerEmulatorInsideFooterVariazione {
+    background-color: #bd88001c !important;
+}
+
+.containerEmulatorInsideHeaderAnnullamentoCancellazione {
+    background-color: #a80000 !important;
+}
+
+.containerEmulatorInsideFooterAnnullamentoCancellazione {
+    background-color: #a800001c !important;
+}
+
+.containerEmulatorInsideHeaderInserimento {
+    background-color: #3d5984 !important;
+}
+
+.containerEmulatorInsideFooterInserimento {
+    background-color: #3d59841c !important;
+}
+
+.subfileField {
+    font-size: var(--bs-font-size);
+    padding-top: 0.25rem;
+    font-family: inherit;
+}
+
+.subfileFieldMonospace_I0644LB {
+    font-size: var(--bs-font-size);
+    font-family: var(--bs-font-monospace) !important;
+    padding-top: 0.3125rem;
+    letter-spacing: 0.125rem;
+    padding-left: 1.3125rem;
+}
+
+.subfileTotali_I0644LB {
+    background-color: #d5dce3 !important;
+}
+
+.subfileTotaliDiPartita_I0644LB {
+    background-color: #e5f0ec !important;
+}
+
+.subfileFieldMonospace_ICGE011 {
+    font-size: var(--bs-font-size);
+    font-family: var(--bs-font-monospace) !important;
+    padding-top: 0.3125rem;
+    letter-spacing: 0.125rem;
+    padding-left: 1.3125rem;
+}
+
+.labelMonospace {
+    font-size: var(--bs-font-size);
+    font-family: var(--bs-font-monospace) !important;
+    letter-spacing: 0.125rem;
+}
+
+.subfileOption {
+    height: 1.25rem !important;
+    margin-top: -0.3125rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+}
+
+.subfileOption:focus {
+    background: none;
+    font-family: initial !important;
+    font-size: var(--bs-font-size);
+    background-repeat: none !important;
+    background-color: var(--bs-background-color-focus) !important;
+    outline: 0 none;
+    margin: 0;
+    z-index: 20;
+    box-sizing: initial;
+    border: 0.0625rem solid var(--bs-border-color);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    border-radius: 0.25rem;
+}
+
+#D_11_7_I0644LB {
+    margin-left: 0.625rem;
+}
+
+#D_11_17_I0644LB {
+    margin-left: -2.1rem;
+}
+
+#D_11_40_I0644LB {
+    margin-left: -9.375rem;
+}
+
+#D_11_50_I0644LB {
+    margin-left: -12.5rem;
+}
+
+#D_11_68_I0644LB {
+    margin-left: -16.625rem;
+}
+
+#D_9_6_ICGE011 {
+    margin-left: 1.5625rem;
+}
+
+#D_9_10_ICGE011 {
+    margin-left: 0.1875rem;
+}
+
+#D_9_16_ICGE011 {
+    margin-left: -3.25rem;
+}
+
+#D_9_45_ICGE011 {
+    margin-left: -8.875rem;
+}
+
+#D_9_60_ICGE011 {
+    margin-left: -14.0625rem;
+}
+
+#D_9_77_ICGE011 {
+    margin-left: -22.5rem;
+}
+
+.subfileTotali_ICGE011 {
+    background-color: #d5dce3 !important;
+}
+
+.windowHeader {
+    width: 100%;
+    min-height: 2.5rem;
+    box-sizing: border-box;
+    background-color: var(--bs-color-window-header);
+    border-radius: 0.25rem 0.25rem 0px 0px;
+    padding-top: 0.5rem;
+}
+
+.windowMessage {
+    position: fixed;
+    left: 0;
+    bottom: 2.5rem;
+    width: 100%;
+    text-align: center;
+    display: block !important;
+    box-sizing: border-box;
+}
+
+.windowInputField:focus {
+    border: 1px solid #7eadd9;
+    background: none;
+    font-weight: normal;
+    font-family: inherit;
+    font-size: var(--bs-font-size);
+    z-index: 20;
+    margin: 0;
+    padding-left: 0.25rem !important;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-repeat: none;
+    border: 0.125rem solid var(--bs-border-color);
+    border-radius: 0.25rem;
+    background-color: var(--bs-background-color-focus) !important;
+    outline: 0 none;
+}
+
+.windowFooter {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    display: block !important;
+    box-sizing: border-box;
+    background-color: var(--bs-color-window-footer);
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    border-radius: 0px 0px 0.25rem 0.25rem;
+}
+
+.ulFunctionKeyWindow {
+    cursor: pointer;
+    display: table;
+    float: right;
+    color: var(--bs-light);
+    font-size: 0.875rem;
+    margin-bottom: 0 !important;
+}
+
+.errorInput {
+    background-image: none;
+    /* border: 0.125rem solid red; */
+    color: inherit !important;
+    background-color: var(--bs-background-color-error);
+}
+
+.numericField {
+    text-align: right;
+}
+
+.bodyWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#fa-microchip {
+    margin-left: -0.125rem;
+}
+
+div.combo-options.Aundefined-combo-options { 
+   z-index: 1300;
+}
+
+.page-link {
+    cursor: pointer;
+}
+
+.paginationMove {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.paginationSize {
+    clear: both;
+    float: left;
+    padding-top: 0.755em;
+}
+
+.subfilePagination {
+    display: contents;
+}
+
+
+.form-floating label {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 0.35rem !important;
+    font-weight: bold;
+}
+
+.formLabel {
+    font-weight: bold;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+    margin-bottom: .25rem;
+}
+
+.formMiddleLabel  {
+    margin-left: 1rem;
+    margin-right: 3rem;
+    margin-bottom: -0.5rem;
+    align-self: flex-start;
+    background: white;
+    font-size: 1rem;
+    z-index: 50;
+    font-weight: bold;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: var(--bs-border-radius);
+}
+
+.form-control {
+    padding: .5rem .75rem;
+    font-size: 0.95rem;
+}
+
+.formControlSubfile {
+    min-height: calc(1.5em + .5rem + calc(var(--bs-border-width) * 2));
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: var(--bs-border-radius-sm);
+}
+
+.formControl {
+    min-height: calc(var(--cs-padding-density) + 2.5rem)
+}
+
+.formControlMiddleLabel {
+    padding-top: calc(var(--cs-padding-density) + 0.75rem);
+    padding-bottom: calc(var(--cs-padding-density) + 0.175rem);
+}
+
+.formControlInsideLabel {
+    padding-top: 1.75rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+.form-control.paddingWidget {
+  padding-right: 3.4rem;   /* regola se il bottone è più largo/stretto */
+}
+
+/* label sopra a campi con icona a destra 
+.labelGroupMiddleLabel.label-has-widget > label {
+  display: block;         
+  margin-right: 3.4rem;   
+} */
+
+.formInsideLabel {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.inputGroup {
+    flex-wrap: nowrap !important; 
+    padding-top: calc(var(--cs-padding-density) + 0.075em);
+    padding-bottom: calc(var(--cs-padding-density) + 0.075rem);
+}
+
+.labelGroup {
+    width:100%;
+}
+
+.labelGroupMiddleLabel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenitore dei bottoni */
+.containerFunctionKeyWindow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.text-gray {
+    --bs-text-opacity: 1;
+    color: rgb(80 76 64) !important;
+}
+
+.form-control::placeholder{
+  color: rgba(var(--bs-body-color-rgb, 33,37,41), .35);
+  opacity: 1; 
+}

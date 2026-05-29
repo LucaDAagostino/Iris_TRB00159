@@ -1,0 +1,222 @@
+.pui-calendar-outer-table {
+  border-spacing: 0px;
+  border: 0px;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.pui-calendar-inner-table {
+  border-spacing: 0px;
+  border-collapse: separate;
+  border: 0px;
+  width: 100%;
+}
+
+.pui-calendar-inner-table td {
+  padding: 0.25rem;
+}
+
+.calendar:not([class*="-header"]):not(.pui-calendar-week-number) {
+  cursor: pointer;
+}
+
+.calendar[class*="-header"],
+.calendar.pui-calendar-week-number {
+  cursor: default;
+}
+
+.brndrow1 {
+  background-color: var(--bs-background-color-calendar-header-01);
+}
+
+.brndrow1 A {
+  border: 0px;
+}
+
+.brndrow1 A:hover {
+  border: 0px;
+}
+
+/* Heading Row - Arrow Images + Month /Year in Calendar*/
+
+.pui-calendar-arrow-prev-year {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: 0px;
+  padding: 0;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/calendar/prev_year.png");
+  background-origin: border-box;
+  box-sizing: border-box;
+}
+
+.pui-calendar-arrow-prev-month {
+  cursor: pointer;
+  width: 0.75rem;
+  height: 1rem;
+  border: 0px;
+  padding: 0;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/calendar/prev_month.png");
+  background-origin: border-box;
+  box-sizing: border-box;
+}
+
+.pui-calendar-month-year-header {
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.pui-calendar-today-button-row {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  text-align: right;
+  /* border-top: 1px solid black; */
+}
+
+.pui-calendar-today-button {
+  font-family: inherit;
+  cursor: pointer;
+  color: #4466ff;
+}
+
+.pui_calendar_brndrow1_right {
+  text-align: right;
+}
+
+.pui-calendar-arrow-next-month {
+  cursor: pointer;
+  width: 0.75rem;
+  height: 1rem;
+  border: 0px;
+  padding: 0;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/calendar/next_month.png");
+  background-origin: border-box;
+  box-sizing: border-box;
+}
+
+.pui-calendar-arrow-next-year {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: 0px;
+  padding: 0;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/calendar/next_year.png");
+  background-origin: border-box;
+  box-sizing: border-box;
+}
+
+.brndrow2 {
+  background-color: var(--bs-background-color-calendar-header-02);
+}
+
+/*Weekday Header Row in Calendar*/
+
+.pui-calendar-weekday-header {
+  font-family: inherit;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+}
+
+.pui-calendar-week-number-header {
+  font-family: inherit;
+  color: white;
+  text-align: center;
+}
+
+/*Individual Dates in Calendar*/
+
+.pui-calendar-week-number {
+  background-color: #5588bb;
+  color: white;
+  text-align: center;
+}
+
+.pui-calendar-selected-date {
+  background-color: #eee3bf;
+  text-align: right;
+}
+
+.pui-calendar-selected-date:hover {
+  background-color: var(--bs-background-color-calendar-date-hover);
+  text-align: right;
+}
+
+.pui-calendar-weekend-date {
+  background-color: #eeeeee;
+  text-align: right;
+}
+
+.pui-calendar-weekend-date:hover {
+  background-color: var(--bs-background-color-calendar-date-hover);
+  text-align: right;
+}
+
+.pui-calendar-workday-date {
+  background-color: white;
+  text-align: right;
+}
+
+.pui-calendar-workday-date:hover {
+  background-color: var(--bs-background-color-calendar-date-hover);
+  text-align: right;
+}
+
+.pui-calendar-current-date {
+  border: 0.125rem solid #ccccff;
+}
+
+.pui-calendar-day-active-month {
+  font-family: inherit;
+  color: black;
+  font-weight: normal;
+}
+
+.pui-calendar-day-inactive-month {
+  font-family: inherit;
+  color: #a6a6a6;
+  font-weight: normal;
+}
+
+/*Calendar Icon*/
+
+.pui-calendar-icon {
+  display: none;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 0px;
+  border-style: none;
+  cursor: pointer;
+  background-image: url("../images/calendar/calendar.svg");
+  background-repeat: no-repeat;
+  margin: 0.125rem 0 0 -1.5rem;
+  z-index: 20;
+}
+
+/*Base Calendar Class*/
+
+.pui-calendar {
+  position: absolute;
+  width: 13, 6875rem;
+  z-index: 100;
+}

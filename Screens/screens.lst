@@ -1,0 +1,25 @@
+{
+  "screens": [
+    {
+      "screen": "I0065XX",
+      "modified": "1751463980693",
+      "identifiers": [
+        { "id": "D_1_74", "value": "I0065XX" }
+      ]
+    },
+    {
+      "screen": "GNI00M",
+      "identifiers": [
+        { "id": "D_1_2", "value": "GNI000M" }
+      ]
+    },
+    {
+      "screen": "GNI001M",
+      "identifiers": [
+        { "id": "D_1_2", "value": "GNI001M" }
+      ]
+    }
+  ],
+  "windows": [
+  ]
+}

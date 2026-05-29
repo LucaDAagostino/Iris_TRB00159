@@ -1,0 +1,38 @@
+#Layout2{
+    width: 98% !important;
+}
+
+#Layout1{
+    width: 89% !important;
+}
+
+.ui-btn-up-a{
+    border: none !important;
+    background: var(--bs-color-navbar-01);
+    font-weight: bold;
+    color: #fff;
+    text-shadow: none !important;
+    background-image: none !important;
+    background-image: none !important; 
+    background-image: none !important;  
+}
+
+.puiwrksplf-grid .header-cell {
+    background-color:var(--bs-color-program-header) !important;
+}
+
+.ui-btn-hover-a:hover{
+    background-color: var(--bs-color-navbar-02)!important;
+}
+
+.ui-btn-hover-a{
+    border: none !important;
+    background: none !important;
+    font-weight: none !important;
+    color: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+    background-image: none !important;
+    background-image: none !important;
+}
+

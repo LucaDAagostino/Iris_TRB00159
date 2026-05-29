@@ -1,0 +1,43 @@
+/* Overlay export */
+#exportOverlay {
+  position: fixed; inset: 0;
+  display: none; /* attivato via JS */
+  z-index: 999999;
+  background: rgba(18,18,18,.55);
+  backdrop-filter: blur(2px);
+  align-items: center; justify-content: center;
+  font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+#exportOverlay .panel {
+  background: #fff; color: #111;
+  border-radius: 16px; padding: 18px 20px;
+  min-width: 280px; max-width: 90vw;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+#exportOverlay .title { font-weight: 600; margin: 0 0 6px; }
+#exportOverlay .sub   { color:#666; margin-bottom:12px; }
+#exportOverlay .bar { height:8px; background:#eee; border-radius:999px; overflow:hidden; }
+#exportOverlay .bar > i { display:block; height:100%; width:12%; transition:width .25s ease; }
+
+body.exporting { overflow:hidden; }
+body.exporting #containerEmulatorInside,
+body.exporting #containerEmulatorInsideHeader,
+body.exporting #subfileTable {
+  opacity:0; visibility:hidden; pointer-events:none;
+}
+
+#exportOverlay .bar > i {
+  display: block;
+  height: 100%;
+  width: 12%;
+  background: var(--bs-color-material-700, #0d6efd); 
+  transition: width .25s ease;
+}
+
+/* Fade overlay */
+#exportOverlay{ opacity:0; transition: opacity .60s ease; will-change: opacity; }
+#exportOverlay.is-open{ display:flex; opacity:1; } 
+
+@media (prefers-reduced-motion: reduce) {
+  #exportOverlay .bar > i { transition: none; }
+}

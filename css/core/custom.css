@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: repeat-y;
+    font-family: var(--bs-font-sans-serif);
+    font-size: var(--bs-font-size);
+    overflow: auto;
+    line-height: 1;
+    background-color: var(--bs-background-color-lighter);
+}
+
+.containerBodySignon {
+    background-color: white;
+    border-radius: 0;
+}
+
+/* ----------------------------------------------------------------- S E T T I N G  ------------------------------------------------------------------------------- */
+
+html {
+    font-size: var(--bs-html-font-size) + 'px';
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* ------------------------------------------------------------------- S U B F I L E  ------------------------------------------------------------------------ */
+
+pui.cell.even {
+    border-top-color: #f9771b !important;
+    -webkit-animation: pui-spin 1.25s linear infinite;
+    animation: pui-spin 1.25s linear infinite;
+}
+
+.grid-hline {
+    border-color: #ddd !important;
+    border: 1px 0px 1px 0px solid #ddd !important;
+    font-size: 0.07rem;
+    padding: 0;
+}
+
+.grid-vline {
+    border-color: transparent;
+}
+
+/* .cell.odd.hover {} */
+/* .cell.even.hover {} */
+
+/* ------------------------------------------------------------------- G E N E R I C O  ------------------------------------------------------------------------ */
+
+#infoTextMessage {
+    height: 1,625rem !important;
+}
+
+.pui-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000012;
+    z-index: 9999;
+}
+
+.pui-animation:before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: Calc(50% - 1.5em);
+    width: 3em;
+    height: 3em;
+    border: 2.5px solid transparent;
+    border-top-color: var(--bs-color-material-800);
+    -webkit-animation: pui-spin 1s linear infinite;
+    animation: pui-spin 1s linear infinite;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.pui-animation:after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: Calc(50% - 1.5em);
+    width: 2.6em;
+    height: 2.6em;
+    margin: .2em;
+    border: 2.5px solid transparent;
+    border-top-color: var(--bs-color-material-200);
+    -webkit-animation: pui-spin 1.5s linear infinite;
+    animation: pui-spin 1.5s linear infinite;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.combo-options {
+    font-size: 0.87rem;
+    padding: 0.3125rem;
+    background-color: white;
+    box-shadow: 0.125rem 0.125rem 0.625rem 0px var(--bs-box-shadow);
+    border-radius: 0.25rem;
+    height: 10rem;
+    width: auto;
+}
+
+.combo-option:hover {
+    background-image: none !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.combo-option-select {
+    background-color: var(--bs-color-material-100) !important;
+}
+
+.input {
+    font-weight: normal !important;
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    border-radius: var(--bs-border-radius);
+}
+
+.input:focus {
+    outline: 0 none;
+    background-color: var(--bs-background-color-focus) !important;
+}
+
+INPUT.readOnly {
+    background-color: var(--bs-color-disable) !important;
+}
+
+
+.combo-main-box {
+    position: absolute;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    width: 2.625rem !important;
+    height: 1.1rem;
+    margin-top: 0 !important;
+    z-index: -1;
+}
+
+.combo-main-box:focus {
+    background-color: var(--bs-background-color-focus) !important;
+}
+
+.combo-arrow {
+    position: absolute;
+    cursor: pointer;
+    right: 0.20rem !important;
+    top: 0.10rem !important;
+    background-image: none;
+    height: auto;
+    width: auto;
+}
+
+.combo-arrow.open{
+    background-image: none;
+}
+
+.combo-arrow, .combo-arrow.open {
+    background-image: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: auto;
+    height: auto;
+  }
+
+.combo-arrow:before {
+    font-family: var(--bs-font-family-FontAwesome);
+    content: "\f107";
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #7d8793;
+}
+
+.grid-mask {
+    background-color: inherit !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: var(--bs-color-disable);
+    opacity: 1;
+}
+
+.fadeLong {
+    transition: opacity 1.5s ease !important; 
+}
+

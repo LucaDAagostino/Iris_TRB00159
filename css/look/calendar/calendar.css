@@ -1,0 +1,8 @@
+.flatpickr-day.today {
+    background-color: var(--bs-color-material-200);
+}
+
+.flatpickr-calendar {
+  font-family: var(--bs-font-sans-serif);
+  font-size: 0.8rem;
+}

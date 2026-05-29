@@ -1,0 +1,31 @@
+.customToast {
+    min-width: 10%;
+    width: auto;
+}
+
+.containerPopup {
+    display: flex;
+    flex-direction: column-reverse; /* reverse column */
+    padding-right: 1rem;
+}
+
+/* Applica il margine corretto al toast "più recente" (visivamente in basso) */
+.containerPopup> :not(:first-child) {
+    margin-top: var(--bs-toast-spacing); /* reverse column */
+    margin-bottom: 0 !important;
+
+}
+
+/* Applica il margine corretto al toast "più recente" (visivamente in basso) */
+.containerPopup> :first-child {
+    margin-top: 1.5rem; /* reverse column */
+    margin-bottom: 0 !important;
+}
+
+.containerPopup {
+    margin-right: 5rem;
+}
+
+.containerPopup.override-bottom {
+  bottom: var(--popup-bottom, 0px) !important;
+}

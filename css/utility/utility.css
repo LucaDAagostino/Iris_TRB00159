@@ -1,0 +1,47 @@
+.sectionTitle{
+    font-size: 1.4rem;
+    padding: 0.3rem;
+    padding-bottom: 0.8rem;
+    color: var(--bs-color-material-700);  
+}
+
+.fieldLabel {
+    font-size: 0.85rem;
+}
+
+
+/* ---------------------------------------------------------------- M O D A L  ---------------------------------------------------------------------- */
+
+ .modalFixed {
+    display: none; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    background-color: #323638c7;
+  }
+  
+  /* Modal Content */
+  .modalFixed-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1.25rem;
+    border: 1px solid #888;
+    width: 80%;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,27 @@
+/* Variabili di default (puoi sovrascriverle da JS) */
+:root{
+  --I0664-editor-width: 80rem;            /* larghezza logica editor */
+  --I0664-char-counter-offset-y: -1.25rem;/* offset verticale contatore caratteri */
+}
+
+/* Contenitore generale dell'editor */
+.I0664-editor-container{
+  margin-bottom: 1rem; /* equivalente a .mb-3 */
+}
+
+/* Box della textarea: stessa larghezza del "66 colonne", centrato, e relativo per posizionare il counter */
+.I0664-taBox{
+  position: relative;
+  width: var(--I0664-editor-width);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Textarea: riempie il taBox */
+.I0664-textarea{
+  width: 100%;
+  resize: vertical;
+  white-space: pre-wrap;
+  font-family: monospace;
+}

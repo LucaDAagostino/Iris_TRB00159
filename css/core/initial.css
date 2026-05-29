@@ -1,0 +1,553 @@
+/* copia HYBRID.CSS */
+
+#content {
+    background: #fbfdff;
+}
+
+.BigText {
+    color: #000066;
+    font-weight: bold;
+    font-size: var(--bs-font-size);
+    text-align: right;
+    width: 6.25rem;
+}
+
+
+/* Push Button */
+
+INPUT.button {
+    color: #335588;
+    font-weight: bold;
+    font-size: 0.80rem;
+}
+
+/* Selector Pen */
+
+.selpen {}
+
+/* Calendar Classes */
+
+.calendar {
+    font-size: 0.73rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.brndrow1 {
+    background-color: #5588BB;
+}
+
+.brndrow1 A {
+    border: 0;
+}
+
+.brndrow1 A:hover {
+    border: 0;
+}
+
+.brndrow2 {
+    background-color: #5588BB;
+}
+
+#menuDiv {
+    border: 0.125rem dashed #CCCCCC;
+}
+
+.menu {
+    background: #5588BB;
+}
+
+.menu TR {
+    cursor: pointer;
+}
+
+.menu TD {
+    font-size: 0.80rem;
+    color: white;
+}
+
+.menuHover TD {
+    background: #FFFF66;
+    color: #0000FF;
+}
+
+.mainDiv {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+div {
+    z-index: 10;
+    text-align: left;
+    white-space: nowrap;
+}
+
+img {
+    z-index: 10;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.input {
+    font-family: inherit;
+    font-weight: normal;
+    font-size: var(--bs-font-size);
+    background-image: none !important;
+    background: #fff;
+    border: 0.0625rem solid #C6C6C6;
+    box-shadow: none;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    border-radius: 0.25rem;
+    z-index: 20;
+}
+
+.focusInp {
+    background: none;
+    font-weight: normal;
+    font-family: inherit;
+    font-size: var(--bs-font-size);
+    z-index: 20;
+    background-repeat: none;
+    border: 1px solid var(--bs-border-color) !important;
+    border-radius: 0.25rem;
+    background-color: var(--bs-background-color-focus) !important;
+    outline: 0 none;
+}
+
+.label {
+    text-align: right;
+    font-weight: bold;
+    color: #003399;
+}
+
+.labelField {
+    font-weight: bold !important;
+}
+
+.heading {
+    color: #105184;
+    font-weight: bold;
+    font-size: 1.33rem;
+}
+
+SELECT {
+    font-size: var(--bs-font-size);
+    background: #F0FFFF;
+    border: 0.1875rem double #8EC8FF;
+    z-index: 20;
+}
+
+BUTTON {
+    z-index: 20;
+}
+
+INPUT {
+    font-size: var(--bs-font-size);
+    z-index: 20;
+    /* padding-left: 0.25rem !important; */
+    /* padding-right: 0.25rem !important; */
+    /* margin-right: 0.125rem !important; */
+    margin-left: 0.125rem !important;
+}
+
+TEXTAREA {
+    z-index: 20;
+}
+
+DIV.Spaced {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-top-width: 10.125rem;
+    border-bottom-width: 10.125rem;
+    border-right-width: 0.5rem;
+    border-left-width: 0.5rem;
+    filter: progid: DXImageTransform.Microsoft.Shadow(color=white, direction=135, strength=6);
+    z-index: 30;
+}
+
+DIV.Default {
+    border-color: var(--bs-border-color);
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 0;
+    z-index: 30;
+    border-radius: 0.25rem;
+}
+
+DIV.Default DIV.title {
+    color: #336699;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+
+.Title {
+    vertical-align: text-top;
+    background-color: #FFFFFF;
+    z-index: 40;
+}
+
+DIV.A20 A,
+A {
+    font-size: var(--bs-font-size);
+    color: var(--bs-color-text);
+    text-decoration: none;
+}
+
+DIV.A20 A:hover {
+    text-decoration: underline;
+}
+
+div.fkey-arrow {
+    font-weight: bold;
+    cursor: normal;
+    font-size: var(--bs-font-size);
+    color: #999999;
+    visibility: hidden;
+}
+
+div.fkey-link {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: var(--bs-font-size);
+    color: #0067C3;
+}
+
+div.fkey-link:hover {
+    text-decoration: underline;
+}
+
+.A20 A {
+    color: #003399;
+}
+
+.A3A A {
+    color: #009B00;
+}
+
+.A22 A {
+    color: #003399;
+}
+
+DIV.A20 {
+    color: var(--bs-color-text);
+}
+
+INPUT.A20 {
+    color: #003399;
+}
+
+.A21 {
+    background-color: #FFCC00;
+    color: #224E9F;
+}
+
+INPUT.A22 {
+    font-weight: bold;
+    color: black;
+}
+
+.A22 {
+    color: var(--bs-color-text);
+    font-weight: normal;
+    font-size: var(--bs-font-size);
+}
+
+.A23 {
+    /* 
+    color: #FFFFFF;
+    background-color: #7A9BE0;
+    background-image: none;
+    */
+    color: var(--bs-color-text);
+    font-weight: normal;
+    font-size: var(--bs-font-size);
+}
+
+INPUT.A24 {
+    color: black;
+}
+
+DIV.A24 {
+    color: #003399;
+}
+
+DIV.A25 {
+    color: #224E9F;
+    background-color: #FFCC00;
+}
+
+INPUT.A25 {
+    color: #224E9F;
+    background-color: #FFCC00;
+}
+
+DIV.A26 {
+    color: #003399;
+}
+
+INPUT.A26 {
+    font-weight: bold;
+    color: black;
+}
+
+INPUT.A27 {
+    color: black;
+}
+
+DIV.A27 {
+    visibility: hidden;
+}
+
+.A28 {
+    color: red;
+}
+
+.A29 {
+}
+
+INPUT.A29 {
+    /* box-shadow: 0px 0px 0.375rem 0px red !important;
+    border: 1px solid red !important; */
+    border-color: var(--bs-form-invalid-border-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.A2B {}
+
+DIV.A2C {
+    color: Red;
+}
+
+INPUT.A2C {
+    color: Red;
+}
+
+DIV.A2D {
+    border: 0.125rem solid red !important;
+    background-color: var(--bs-background-color-error) !important;
+}
+
+INPUT.A2D {}
+
+INPUT.A2A {
+    color: red;
+}
+
+DIV.A2A {
+    color: red;
+}
+
+INPUT.A2E {
+    color: red;
+}
+
+DIV.A2E {
+    color: red;
+}
+
+DIV.A2F {
+    visibility: hidden;
+}
+
+DIV.A30 {
+    color: #3366cc;
+}
+
+INPUT.A30 {
+    color: navy;
+}
+
+.A31 {
+    color: #FFFFFF;
+    background-color: #33CCCC;
+}
+
+DIV.A32 {
+    color: #ff8040;
+}
+
+INPUT.A32 {
+    color: black;
+}
+
+.A33 {
+    color: #FFFFFF;
+    background-color: #ff8040;
+}
+
+DIV.A34 {
+    color: #3366cc;
+}
+
+INPUT.A34 {
+    color: black;
+}
+
+DIV.A35 {
+    color: #FFFFFF;
+    background-color: aqua;
+}
+
+INPUT.A35 {
+    color: black;
+    background-color: none;
+}
+
+DIV.A36 {
+    color: #ff8040;
+    border-radius: 0.25rem;
+}
+
+INPUT.A36 {
+    color: black;
+}
+
+.A37 {
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+.A38 {
+    color: fuchsia;
+    color: #841616c4;
+}
+
+.A39 {
+    color: #FFFFFF;
+    background-color: fuchsia;
+}
+
+.A3A {
+    font-size: var(--bs-font-size);
+    font-style: initial;
+    color: var(--bs-color-primary);
+}
+
+.A3B  {
+    color: #FFFFFF;
+    background-color: #9999FF;
+}
+
+INPUT.A3B {
+    background-image: none;
+}
+
+DIV.A3C {
+    color: fuchsia;
+}
+
+INPUT.A3C {
+    color: fuchsia;
+}
+
+DIV.A3D {
+    color: #FFFFFF;
+    background-color: fuchsia;
+}
+
+INPUT.A3D {
+    color: #336699;
+    background-color: fuchsia;
+}
+
+DIV.A3E {
+    color: #6666FF;
+}
+
+INPUT.A3E {
+    color: #333399;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+INPUT.readOnly {
+    background-color: #eceff1;
+    opacity: 1;
+    color: #555;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.autocomplete-item {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FFFFFF rgb(255, 255, 255) rgb(238, 238, 238);
+    font-size: var(--bs-font-size);
+    color: #555555;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    margin: 0;
+    padding: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+}
+
+.autocomplete-selected {
+    background-color: #DFE8F6;
+    border: 1px dotted #A3BAE9 !important;
+}
+
+.autocomplete-col {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+INPUT.A23,
+INPUT.A2D,
+INPUT.A3B,
+INPUT.A35,
+INPUT.A33 {
+    background-image: none;
+}
+
+.pui-containerBody-animation {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -160.3125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    z-index: 1001;
+}
+
+.pui-containerBody-animation:before {
+    content: '';
+    position: absolute;
+    top: 0.3125rem;
+    left: 0.3125rem;
+    right: 0.3125rem;
+    bottom: 0.3125rem;
+    border-radius: 50%;
+    border: 2.0.3125rem solid transparent;
+    border-top-color: #0b69b8;
+    -webkit-animation: pui-spin 1s linear infinite;
+    animation: pui-spin 1s linear infinite;
+}
+
+.pui-containerBody-animation:after {
+    content: '';
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    border-radius: 50%;
+    border: 2.0.3125rem solid transparent;
+    border-top-color: #f9771b;
+    -webkit-animation: pui-spin 1.25s linear infinite;
+    animation: pui-spin 1.25s linear infinite;
+}

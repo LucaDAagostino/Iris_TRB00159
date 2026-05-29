@@ -1,0 +1,224 @@
+.containerFooter {
+    position: fixed;
+    clear: both;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: var(--bs-color-footer);
+    text-align: left;
+    z-index: 701;
+}
+
+.containerLogoCompany {
+    width: 2rem;
+    flex-shrink: 0;
+    /* Impedisce al logo di ridursi */
+}
+
+.containerFooterUp {
+    display: flex;
+    height: auto;
+    width: 100%;
+    background-color: var(--bs-color-footer);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    /* Allineamento verticale */
+    justify-content: space-between;
+    /* Spazio tra logo e function keys */
+}
+
+.containerFunctionKey {
+    width: 100%;
+}
+
+.iFunctionKey {
+    margin-right: 0.75rem;
+}
+
+
+.messageBadge {
+	position: relative !important;
+	font-style: normal !important;
+    cursor: pointer;
+    top: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    font-size: 1rem;
+    padding: 0.7rem;
+}
+
+.messageAlert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 2rem;
+}
+
+.arrowAlert {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+
+.LogoCompanyImage {
+    width: 100%;
+    max-width: 100%;
+    margin-left: -1rem;
+    height: auto;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.btn-insideHeaderButtons {
+    position: relative;
+    display: inline;
+    margin-right: 1.25rem;
+    z-index: 11 !important;
+    padding-left: 0.3125rem;
+}
+
+.ulMenuPlugInButtons {
+    display: inline-flex;
+    cursor: pointer;
+    color: var(--bs-light);
+    margin-top: 0.5rem;
+}
+
+.ulFunctionKey {
+    margin-bottom: 0;
+}
+
+#arrowAlert li {
+    display: flex;
+    align-items: center;
+}
+
+#arrowAlert {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    /* spazio tra frecce */
+    list-style: none;
+    /* rimuove i pallini */
+    padding: 0;
+    margin: 0;
+}
+
+.containerAlert {
+    display: flex;
+    align-items: center; /* centro verticale */
+    gap: 1rem; /* spazio tra blocchi */
+    margin-bottom: 0 !important;
+    justify-content: flex-end;
+    height: 2%;
+    padding: 0.5rem;
+    border-radius: 0 !important;
+    border: 0;
+    background-color: var(--bs-gray-200);
+}
+
+.controlAlert {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+}
+
+.containerFunctionKey {
+    flex: 1;
+    /* Prende spazio rimanente */
+    text-align: center;
+    /* Centra i bottoni se vuoi */
+}
+
+.btn-arrow {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-arrow i {
+    font-size: 14px;
+}
+
+.bg-info-custom {
+    --bs-bg-opacity: 0.3;
+    background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-primary-custom {
+    --bs-bg-opacity: 0.7;
+    background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-warning-custom {
+    --bs-bg-opacity: 0.5;
+    background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+}
+
+/* ------------------------------------------------------------- F U N C T I O N    K E Y  ------------------------------------------------------------------------ */
+
+
+.btn-functionKey {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    min-width: 6rem;
+}
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-lg {
+    font-size: var(--bs-font-size) !important;
+}
+
+.btn-primary:focus{
+    box-shadow: none;
+}
+.btn:focus{
+    box-shadow: none;
+}
+
+.btn-custom-dark {
+    color: var(--bs-color-button);
+    background-color: var(--bs-background-color-button);
+}
+
+.btn-custom-dark:hover {
+    color: var(--bs-color-button);
+    background-color: var(--bs-background-color-button-hover);
+}
+
+.btn-xl {
+    height: auto;
+    width: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.25rem;
+}
+
+.btn-xxl {
+    height: auto;
+    width: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2.75rem;
+}
+
+.btn-widget {
+    align-items: center;
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    background-color: var(--bs-gray-200);
+    --bs-btn-padding-x: 0.85rem;
+}

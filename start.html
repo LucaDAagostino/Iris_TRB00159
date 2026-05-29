@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<title>NSIL Web | TRB00159</title>
+
+	<!-- Css -->
+	<link href="/profoundui/proddata/css/profoundui.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/lib/bootstrap/5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen"> <!-- Bootstrap  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+	<link href="/profoundui/userdata/lib/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"  rel="stylesheet" type="text/css" media="screen"> <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">-->
+
+	<link href="/profoundui/userdata/lib/fonts/fontawesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css" media="screen"> 
+	<link href="/profoundui/userdata/lib/jsonView/jsonView.min.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="/profoundui/userdata/lib/animate/animate.min.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="/profoundui/userdata/lib/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" media="screen"> <!-- Flatpickr CSS <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">  -->
+	<link href="/profoundui/userdata/lib/choices/choices.min.css" rel="stylesheet" type="text/css" media="screen"> <!-- <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> -->
+
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/look/font.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/look/themeColor.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/look/calendar/calendar.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/look/calendar/puiCalendar.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/loader.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/custom.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/style.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/initial.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/header.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/login.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/navigationBar.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/body.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/footer.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/core/window.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/utility/utility.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/utility/exportTable.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/utility/notification.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/widget/widget_puiWRKSPLF.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redraw.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawCustomized/redrawCustomized_I2900LB.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawCustomized/redrawCustomized_I2935LB.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawCustomized/redrawCustomized_MNUGEN.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawCustomized/redrawCustomized_CHGENV.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawCustomized/redrawCustomized_RSCNMSG.css" rel="stylesheet" type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_I0065LB.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_I0403LB.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_I0644LB.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_I0664LB.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_ICGE007.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_ICGE011.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_ICGE012.css" rel="stylesheet"	type="text/css" />
+	<link href="/profoundui/userdata/genie skins/Iris_TRB00159/css/redraw/redrawAdvanced/redrawAdvanced_ICGE013.css" rel="stylesheet"	type="text/css" />
+
+	<!-- Js -->
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/properties.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/version.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/initial.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/observer/bridgeAfterLoad.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/observer/forceAfterLoad.js"></script>
+	<script type="text/javascript" src="/profoundui/proddata/js/genie.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/lib/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/jquery/3.6.0/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/bootstrap/5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap npm <<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+	<script type="text/javascript" src="/profoundui/userdata/lib/jsonView/jsonView.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/canvans/1.4.0/js/html2canvas.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/vanta/vanta.three.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/vanta/vanta.birds.min.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/lib/choices/choices.min.js"></script> <!-- <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"> -->
+
+	<script type="text/javascript" src="/profoundui/userdata/lib/flatpickr/flatpickr.min.js"></script> <!-- Flatpickr js <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+	<script type="text/javascript" src="/profoundui/userdata/lib/flatpickr/l10n/it.js"></script> <!-- Flatpickr js <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n"></script> -->
+	<script type="text/javascript" src="/profoundui/userdata/lib/flatpickr/l10n/default.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/logger.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/custom.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/exportTable.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/domAndStrings.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/events.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/consoleLog.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/cookies.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/storage.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/programMeta.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/fields.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/screenshot.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/storage.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/jsonView.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/uiBuilders.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/notifications.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/detection.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/previousScreen.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/snapshot.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/email.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/miscellanous.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/archiveScreen.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/utility/animation.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/loader.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/style.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/login.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/header.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/navigationBar.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/body.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/window.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/webService/webService.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/webService/webService_BGNIDSPF.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/webService/webService_BGNIATTR.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/webService/webService_BGNIWMSG.js"></script>
+	
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redraw.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized_I2900LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized_I2935LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized_MNUGEN.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized_CHGENV.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawCustomized/redrawCustomized_RSCNMSG.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawBasic/redrawBasic.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawBasic/redrawBasic_I0401LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawBasic/redrawBasic_I0644LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawBasic/redrawBasic_ICGE011.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_I0065LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_I0403LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_I0644LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_I0664LB.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_ICGE007.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_ICGE011.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_ICGE012.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_ICGE013.js"></script>
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/redraw/redrawAdvanced/redrawAdvanced_I9104LB.js"></script>
+
+	<script type="text/javascript" src="/profoundui/userdata/genie skins/Iris_TRB00159/js/core/footer.js"></script>
+</head>
+
+<body>
+	<div id="bodyWrapper" class="bodyWrapper fade" style="visibility: hidden">
+		<header id="containerHeader">
+			<div id="containerHeaderMajor" class="containerHeaderMajor">
+				<div id="containerHeaderLeft"></div>
+				<div id="containerHeaderCenter"></div>
+				<div id="containerHeaderRight"></div>
+			</div>
+		</header>
+		<div id="containerMain" class="containerMain">
+			<div id="containerSideBar" class="containerSideBar"></div>
+			<div id="containerEmulatorOutside" class="containerEmulatorOutside">
+				<div id="containerEmulatorInside" class="containerEmulatorInside">
+					<div id="containerEmulatorInsideHeader" class="containerEmulatorInsideHeader">
+						<div id="insideHeaderTitle"></div>
+						<div class="d-flex align-items-center ms-auto" style="gap: 0.5rem;">
+							<div id="insideHeaderButtons"></div>
+							<div id="notificationArea" class="d-flex align-items-center ms-auto me-3"
+								style="position: relative;">
+								<button id="notificationButton" type="button"
+									class="btn btn-primary btn-sm position-relative d-none">
+									Notifiche
+									<span id="notificationBadge"
+										class="position-absolute top-0 start-100 translate-middle">
+										<span class="visually-hidden">notifiche non lette</span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="containerEmulatorInsideBody" class="containerEmulatorInsideBody">
+						<div id="5250" class="emulatorDiv" style="position:relative; visibility:hidden;"></div>
+						<div id="containerWindow" class="containerWindow"></div>
+					</div>
+					<div id="containerEmulatorInsideFooter" class="containerEmulatorInsideFooter"></div>
+				</div>
+			</div>
+		</div>
+		<div id="containerPopup" class="containerPopup toast-container position-fixed bottom-0 end-0 override-bottom"></div>
+		<div id="containerPreviousEmulatorOutside"></div>
+		<footer id="containerFooter" class="containerFooter">
+			<div id="containerFooterDown">
+				<div id="containerAlert" class="containerAlert">
+					<div id="messageAlert" class="messageAlert"></div>
+				</div>
+			</div>
+			<div id="containerFooterUp" class="containerFooterUp">
+				<div id="containerFunctionKey" class="containerFunctionKey container containerFunctionKey"></div>
+				<div id="containerLogoCompany" class="containerLogoCompany"></div>
+			</div>
+		</footer>
+	</div>
+	<div id="loader" class="loader">
+		<ul class="hexagon-container">
+			<li class="hexagon hex_1"></li>
+			<li class="hexagon hex_2"></li>
+			<li class="hexagon hex_3"></li>
+			<li class="hexagon hex_4"></li>
+			<li class="hexagon hex_5"></li>
+			<li class="hexagon hex_6"></li>
+			<li class="hexagon hex_7"></li>
+		</ul>
+	</div>
+</body>
+
+</html>

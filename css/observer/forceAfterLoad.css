@@ -1,0 +1,3 @@
+body.modal-exclusive > *:not(.modal):not(.modal-backdrop){ 
+    display:none !important; 
+}

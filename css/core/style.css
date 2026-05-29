@@ -1,0 +1,65 @@
+/* ---------------------------------------------------------------- M E D I A    Q U E R I E S ----------------------------------------------------------------------*/
+
+/* Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 575.98px) {
+    :root {
+        --bs-breakpoint: "portrait";
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    :root {
+        --bs-breakpoint: "landscape";
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    :root {
+        --bs-breakpoint: "tablet";
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    :root {
+        --bs-breakpoint: "desktop";
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    :root {
+        --bs-breakpoint: "desktopXL";
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media screen and (min-width: 1400px) {
+    :root {
+        --bs-breakpoint: "desktop2XL";
+    }
+}
+
+/* XXX-Large devices (very large desktops, 1600px and up) */
+@media screen and (min-width: 1600px) {
+    :root {
+        --bs-breakpoint: "desktop3XL";
+    }
+}
+
+/* 4K-ish / ultrawide desktops (1920px and up) */
+@media screen and (min-width: 1920px) {
+    :root {
+        --bs-breakpoint: "desktop4K";
+    }
+}
+
+/* Super ultrawide (2560px and up) – opzionale */
+@media screen and (min-width: 2560px) {
+    :root {
+        --bs-breakpoint: "desktopUltra";
+    }
+}
+

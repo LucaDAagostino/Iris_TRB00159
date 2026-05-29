@@ -1,0 +1,78 @@
+:root {
+    /*  https://www.materialpalette.com/colors
+      50# #eceff1
+      100 #cfd8dc
+      200 #b0bec5
+      300 #90a4ae
+      400 #78909c
+      500 #607d8b
+      600 #546e7a
+      700 #455a64
+      800 #37474f
+      900 #263238
+  */
+    --bs-font-sans-serif:  Prompt, sans-serif; /* system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    --bs-font-monospace: "Roboto Mono", "Inconsolata", "Overpass Mono", "Ubuntu Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    
+    --bs-color-material-50: #eceff1;
+    --bs-color-material-100: #cfd8dc;
+    --bs-color-material-200: #b0bec5;
+    --bs-color-material-300: #90a4ae;
+    --bs-color-material-400: #78909c;
+    --bs-color-material-500: #607d8b;
+    --bs-color-material-600: #546e7a;
+    --bs-color-material-700: #455a64;
+    --bs-color-material-800: #37474f;
+    --bs-color-material-900: #263238;
+
+    --bs-gray-light: #DDD;
+    --bs-color-header: var(--bs-color-material-800);
+    --bs-color-footer: var(--bs-color-material-700);
+    --bs-color-window-header: var(--bs-color-material-600);
+    --bs-color-window-footer: var(--bs-color-material-200);
+    --bs-color-program-header: var(--bs-color-material-600);
+    --bs-color-program-footer: var(--bs-color-material-200);
+    --bs-color-primary: var(--bs-color-material-700);
+    --bs-color-navbar-01: var(--bs-color-material-700);
+    --bs-color-navbar-02: var(--bs-color-material-600);
+    --bs-color-navbar-03: #ffffff;
+    --bs-color-navbar-04: #5e7a9c;
+    --bs-color-navbar-05: #5e7a9c;
+    --bs-box-shadow: var(--bs-color-material-300);
+    --bs-border-color: #e3e3e3;
+    --bs-background-color: #fbfbfb;
+    --bs-background-color-lighter: #fffffff6;
+    --bs-background-color-darker: #dddee1;
+    --bs-background-color-focus: #fbfbfb;
+    --bs-background-color-error: #eadbdd75;
+    --bs-background-color-valid: #eaf1ea;
+    --bs-background-table-thead: var(--bs-color-material-400);
+    --bs-background-table-thead-first: var(--bs-color-material-6e00);
+    --bs-background-color-calendar-header-01: var(--bs-color-material-500);
+    --bs-background-color-calendar-header-02: var(--bs-color-material-400);
+    --bs-background-color-calendar-date-hover: var(--bs-color-material-200);
+    --bs-background-color-button: var(--bs-color-material-500);
+    --bs-background-color-button-hover: var(--bs-color-material-800);
+    --bs-color-button: white;
+    --bs-system-icon: #A47E5D;
+    --bs-font-size: 1rem;
+    --bs-color-text: #4f4f4f;
+    --bs-color-disable: #fbfbfb;
+    --bs-html-font-size: 16;
+    --bs-font-family-FontAwesome: "Font Awesome 5 Free";
+    --bs-breakpoint: "";
+    --bs-body-bg: #ffffff00;
+    --bs-btn-padding-x: 0.85rem;
+
+    --cs-padding-density: 0rem;
+    --cs-background-color-label: #e8f5da;
+}
+
+.dropdown-menu {
+    --bs-dropdown-item-padding-x: 0.75rem;
+    --bs-dropdown-item-padding-y: 0;
+    --bs-dropdown-header-color: #bad6ca;
+    --bs-dropdown-header-padding-x: 1rem;
+    --bs-dropdown-header-padding-y: 0.25rem;
+}

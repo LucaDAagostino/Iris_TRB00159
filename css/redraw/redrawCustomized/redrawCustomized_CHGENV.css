@@ -1,0 +1,205 @@
+#container5250CustomMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  font-family: var(--bs-font-sans-serif);
+}
+
+#container5250CustomMenuOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+/* bottone normale */
+#container5250CustomMenuOptions .btn {
+  flex: 0 0 auto;
+  width: 50rem;
+  height: 4rem;
+  min-width: 2rem;
+  min-height: 1rem;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  white-space: normal;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+
+  font-size: 2rem;
+}
+
+/* bottone selezionato quando nel 5250 c'è ** */
+#container5250CustomMenuOptions .chgenv-option-selected {
+  background-color: var(--bs-warning) !important;
+  border-color: var(--bs-warning) !important;
+  color: var(--bs-dark) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.35);
+}
+
+/* badge selezionato */
+#container5250CustomMenuOptions .chgenv-option-selected::after {
+  content: "Selezionato";
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 1rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: white;
+  color: var(--bs-dark);
+}
+
+#chgenvSelectedLabel {
+  align-self: flex-end;
+  margin: 0 1rem 1rem auto;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.75rem;
+  background-color: var(--bs-warning);
+  color: var(--bs-dark);
+  font-family: var(--bs-font-sans-serif);
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.35);
+}
+
+.chgenv-selected-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.chgenv-selected-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.chgenv-btn-special {
+  font-size: 2.5rem !important;
+  height: 5rem !important;
+  background: linear-gradient(135deg, #dc3545, #b02a37) !important;
+  border: none !important;
+  box-shadow: 0 0 1rem rgba(220, 53, 69, 0.4);
+}
+
+.chgenv-btn-special {
+  font-size: 2.5rem !important;
+  height: 5rem !important;
+  background: linear-gradient(135deg, #198754, #146c43) !important;
+  border: none !important;
+  box-shadow: 0 0 1rem rgba(25, 135, 84, 0.35);
+}
+
+.chgenv-logout-btn {
+  width: auto !important;
+  min-width: 18rem;
+  height: 4.5rem !important;
+  font-size: 1.5rem !important;
+  padding: 0 2rem !important;
+  box-shadow:  0 0 0.25rem rgb(255 0 0 / 35%);
+}
+
+.chgenv-logout-btn i {
+  font-size: 2rem;
+}
+
+.chgenv-columns-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.chgenv-decade-column {
+  flex: 1 1 30rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem;
+  border-radius: 1rem;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+
+
+
+.chgenv-top-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.chgenv-bottom-row {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 5rem;
+}
+
+.chgenv-btn-special {
+  width: 100% !important;
+  height: 5rem !important;
+  font-size: 2.5rem !important;
+  background: linear-gradient(135deg, #198754, #146c43) !important;
+  border: none !important;
+  box-shadow: 0 0 1rem rgba(25, 135, 84, 0.35);
+}
+
+.chgenv-main-btn,
+.chgenv-logout-btn {
+  width: auto !important;
+  min-width: 20rem;
+  height: 4.5rem !important;
+  font-size: 1.5rem !important;
+  padding: 0 2rem !important;
+  box-shadow:  0 0 0.25rem rgba(1, 81, 255, 0.35)
+}
+
+.chgenv-main-btn i,
+.chgenv-logout-btn i {
+  font-size: 2rem;
+}
+
+.chgenv-decade-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra orizzontalmente */
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.chgenv-decade-column .btn {
+  width: 100%;
+  max-width: 50rem;      /* evita bottoni troppo larghi */
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.chgenv-decade-title {
+  width: 100%;
+  text-align: center;
+  background-color: var(--bs-color-material-200);
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+
+  padding: 0.5rem;
+  margin: 1rem;
+  color: white;
+}
+
+.chgenv-btn-special i {
+  font-size: 2.8rem;
+}

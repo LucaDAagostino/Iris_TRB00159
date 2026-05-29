@@ -1,0 +1,21 @@
+{
+  "screen": { "screen_name": "GNI00M" },
+  "items": [
+    { "id": "D_1_2", "screen_identifier": "true", "field_type": "output field", "value": "script: value", "identifier_value": "GNI000M" }, 
+    { "id": "D_2_61", "field_type": "output field", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "D_2_72", "field_type": "output field", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "D_3_2", "field_type": "output field", "value": "script: value", "visibility": "hidden", "top": "354px", "left": "270px" }, 
+    { "id": "D_5_4", "field_type": "output field", "value": "script: value", "top": "141px", "left": "34px", "visibility": "hidden" }, 
+    { "id": "D_6_7", "field_type": "output field", "onclick": "pressKey('option1');", "top": "175px", "left": "32px", "css_class": "card card-content", "visibility": "hidden", "width": "361px", "height": "23px", "z_index": "9", "value": "script: value", "cursor": "pointer" }, 
+    { "id": "D_8_4", "field_type": "output field", "value": "script: value", "top": "243px", "left": "34px", "visibility": "hidden" }, 
+    { "id": "D_19_68", "field_type": "output field", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "D_20_2", "field_type": "output field", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "D_21_2", "field_type": "output field", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "iconSpoolFile", "field_type": "icon", "left": "85px", "top": "55px", "icon": "fontAwesome-solid:print", "value": "script: value", "width": "43px", "height": "50px", "color": "#0066CC", "onclick": "pressKey('option1');", "cursor": "pointer", "css_class": "spoolFile", "newitem": "true" }, 
+    { "id": "cardSpoolFile", "field_type": "output field", "color": "#212529", "font_family": "\"Roboto Mono\", \"Inconsolata\", \"Overpass Mono\", \"Ubuntu Mono\", SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace", "font_size": "16px", "font_style": "normal", "font_variant": "normal", "letter_spacing": "normal", "text_decoration": "rgb(33, 37, 41)", "text_transform": "none", "word_spacing": "0px", "top": "38px", "left": "-13px", "z_index": "8", "css_class": "card card card-content card-body spoolFile", "height": "164px", "background_color": "rgb(234, 237, 242)", "width": "201px", "cursor": "pointer", "value": "script: value", "onclick": "pressKey('option1');", "newitem": "true" }, 
+    { "id": "titleSpoolFile", "field_type": "output field", "value": "Gestione file di spool", "color": "rgb(79, 79, 79)", "font_family": "Prompt, sans-serif", "font_size": "16px", "font_style": "normal", "font_variant": "normal", "letter_spacing": "normal", "text_decoration": "rgb(33, 37, 41)", "text_transform": "none", "word_spacing": "0px", "top": "124px", "left": "18px", "z_index": "10", "css_class": "label spoolFile", "width": "169px", "font_weight": "normal", "height": "19px", "onclick": "pressKey('option1');", "cursor": "pointer", "text_align": "center", "newitem": "true" }, 
+    { "id": "noteSpoolFile", "field_type": "html container", "color": "rgb(128, 128, 128)", "font_family": "Prompt, sans-serif", "font_size": "11px", "font_style": "normal", "font_variant": "normal", "letter_spacing": "0px", "text_decoration": "rgb(33, 37, 41)", "text_transform": "none", "word_spacing": "0px", "top": "167px", "left": "-8px", "z_index": "10", "html": "Il menu Gestione file in spool permette di visualizzare, modififcare e scaricare i file in spool attualmente nell sistema. ", "white_space": "normal", "width": "218px", "height": "57px", "value": "script: value", "text_align": "center", "inline_style": "line-height: 15px", "font_weight": "normal", "onclick": "pressKey('option1');", "cursor": "pointer", "css_class": "spoolFile", "newitem": "true" }, 
+    { "id": "I_21_7", "field_type": "textbox", "value": "script: value", "visibility": "hidden" }, 
+    { "id": "I_22_1", "field_type": "textbox", "value": "script: value", "visibility": "hidden" }
+  ]
+}
