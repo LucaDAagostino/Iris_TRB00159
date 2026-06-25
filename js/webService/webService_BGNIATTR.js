@@ -101,6 +101,10 @@ handleResponse_BGNIATTR = function (response, urlCache) {
     setDataStorage("codeEnvironment", item.codeEnvironment, "session");
   }
 
+   if (item && item.prefixWs) {
+    setDataStorage("prefixWs", item.prefixWs, "session");
+  }
+
   if (item && item.company) {
     setDataStorage("company", item.company, "session");
   }

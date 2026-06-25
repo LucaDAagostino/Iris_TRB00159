@@ -16,7 +16,7 @@ setWebServiceUrl = function (webServiceName) {
 function buildWebServiceUrl(url, forcedEnv = null) {
   const storedEnvironment = getDataStorage("environment", "session");
   const environment = (storedEnvironment || forcedEnv || "").slice(-3);
-  const codeEnvironment = getDataStorage("codeEnvironment", "session") || properties.defaultCodeEnvironment;
+  const prefixWs = getDataStorage("prefixWs", "session") || properties.defaultPrefixWs;
 
   if (typeof url !== "string") return url;
 
@@ -46,7 +46,7 @@ function buildWebServiceUrl(url, forcedEnv = null) {
   finalUrl = currentBaseWsUrl + serviceName;
 
   return finalUrl
-    .replace("{CODE}", codeEnvironment)
+    .replace("{PREFIXWS}", prefixWs)
     .replace("{ENV}", environment);
 }
 

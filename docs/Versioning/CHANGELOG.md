@@ -3,15 +3,17 @@
 Tutte le modifiche rilevanti della skin Genie AppCore sono documentate qui.
 
 
+## [1.0.3] - 2026-06-25
+### Added
+- Gestione logo AppCore.
+
 ## [1.0.2] - 2026-05-29
 ### Fixed
 - Correzioni info società.
 
-
 ## [1.0.1] - 2026-05-29
 ### Fixed
 - Correzioni funzione ExportTable.
-
 
 ## [1.0.0] - 2026-05-21
 ### Added

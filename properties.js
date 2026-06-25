@@ -42,7 +42,11 @@ const properties = {
   logoName: 'Logo_Moltiply_White.svg',
   logoHref: 'https://www.trebi.it',
   faviconName: 'favicon_Moltiply.ico',
-  logoProductName: 'logo_Moltiply_AppCore.png',
+
+  get logoProductName() {
+    return `logo_Moltiply_AppCore_${this.nameAppCore}.png`;
+  },
+
   logoCompanyName: 'Logo_Moltiply_White.svg',
 
   //logger
@@ -58,17 +62,17 @@ const properties = {
   urlWs: baseWsUrl,
   timeoutWs: 600,
 
-  defaultCodeEnvironment: 'FA1',
+  defaultPrefixWs: 'FA1',
   invokeWs_BGNIDSPF: true,
-  prefixNameWs_BGNIDSPF: '{CODE}_{ENV}_',
+  prefixNameWs_BGNIDSPF: '{PREFIXWS}_{ENV}_',
   nameWs_BGNIDSPF: "BGNIDSPF",
 
   invokeWs_BGNIATTR: true,
-  prefixNameWs_BGNIATTR: '{CODE}_{ENV}_',
+  prefixNameWs_BGNIATTR: '{PREFIXWS}_{ENV}_',
   nameWs_BGNIATTR: "BGNIATTR",
 
   invokeWs_BGNIWMSG: true,
-  prefixNameWs_BGNIWMSG: '{CODE}_{ENV}_',
+  prefixNameWs_BGNIWMSG: '{PREFIXWS}_{ENV}_',
   nameWs_BGNIWMSG: "BGNIWMSG",
 
   disableCacheWs: ['I0050LB', 'I1050LB', 'I0721LB'],      //Inserire qui i programmi che scrivono formati record dinamici

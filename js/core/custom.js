@@ -453,6 +453,7 @@ prepareEnvironment = function () {
     } else {
         if (!Boolean(isAppCore) || isMainMenuAppCore) {
             removeDataStorage("codeEnvironment", "session")
+             removeDataStorage("prefixWs", "session")
             removeDataStorage("company", "session")
             removeDataStorage("environment", "session")
         }
