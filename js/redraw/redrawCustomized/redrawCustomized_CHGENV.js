@@ -116,6 +116,210 @@ function renderCHGENVSelectedLabel(container, selectedLabel) {
   container.appendChild(selectedBox);
 }
 
+
+// >>> @Start v1.0.6
+// Funzioni per identificare le lingue, creare le bandiere SVG
+// e renderizzare le schede. Non richiedono immagini esterne.
+
+function getCHGENVLanguage(label) {
+  const normalized = String(label || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+  if (/\b(inglese|english)\b/.test(normalized)) {
+    return {
+      id: "inglese",
+      name: "English"
+    };
+  }
+
+  if (/\b(spagnolo|espanol|spanish)\b/.test(normalized)) {
+    return {
+      id: "spagnolo",
+      name: "Español"
+    };
+  }
+
+  if (/\b(italiano|italian)\b/.test(normalized)) {
+    return {
+      id: "italiano",
+      name: "Italiano"
+    };
+  }
+
+  return null;
+}
+
+function getCHGENVLanguageFlagSVG(languageId) {
+  const flags = {
+    italiano: `
+      <svg viewBox="0 0 60 36"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true"
+           focusable="false">
+        <rect width="20" height="36" fill="#009246"/>
+        <rect x="20" width="20" height="36" fill="#FFFFFF"/>
+        <rect x="40" width="20" height="36" fill="#CE2B37"/>
+      </svg>
+    `,
+
+    inglese: `
+      <svg viewBox="0 0 60 36"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true"
+           focusable="false">
+        <rect width="60" height="36" fill="#012169"/>
+        <path d="M0 0L60 36M60 0L0 36"
+              stroke="white"
+              stroke-width="8"/>
+        <path d="M0 0L60 36M60 0L0 36"
+              stroke="#C8102E"
+              stroke-width="3"/>
+        <path d="M30 0V36M0 18H60"
+              stroke="white"
+              stroke-width="12"/>
+        <path d="M30 0V36M0 18H60"
+              stroke="#C8102E"
+              stroke-width="6"/>
+      </svg>
+    `,
+
+    spagnolo: `
+      <svg viewBox="0 0 60 36"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true"
+           focusable="false">
+        <rect width="60" height="36" fill="#AA151B"/>
+        <rect y="9" width="60" height="18" fill="#F1BF00"/>
+        <g transform="translate(17 18)">
+          <rect x="-3" y="-6"
+                width="6"
+                height="11"
+                rx="1"
+                fill="#AA151B"/>
+          <rect x="-4" y="-7"
+                width="8"
+                height="2"
+                fill="#AA151B"/>
+          <rect x="-2" y="-4"
+                width="4"
+                height="6"
+                fill="#F1BF00"/>
+          <path d="M-5 5H5"
+                stroke="#AA151B"
+                stroke-width="1.5"/>
+        </g>
+      </svg>
+    `
+  };
+
+  return flags[languageId] || "";
+}
+
+function renderCHGENVLanguageCards(languageOptions) {
+  const section = document.createElement("section");
+  section.className = "chgenv-language-section";
+
+  const heading = document.createElement("h2");
+  heading.className = "chgenv-language-heading";
+  heading.textContent = "Lingua / Language / Idioma";
+
+  const status = document.createElement("div");
+  status.className = "chgenv-language-status";
+  status.setAttribute("aria-live", "polite");
+
+  const cards = document.createElement("div");
+  cards.className = "chgenv-language-cards";
+
+  // Legge la lingua salvata prima del redraw.
+  const previouslySelected = getCHGENVSelectedLanguage();
+
+  const languageOrder = {
+    italiano: 1,
+    inglese: 2,
+    spagnolo: 3
+  };
+
+
+
+  const orderedLanguageOptions = [...languageOptions].sort(
+    (a, b) =>
+      (languageOrder[a.language.id] || 99) -
+      (languageOrder[b.language.id] || 99)
+  );
+
+  const languageTitles = {
+    italiano: "Lingua",
+    inglese: "Language",
+    spagnolo: "Idioma"
+  };
+
+  heading.textContent = orderedLanguageOptions
+    .map(opt => languageTitles[opt.language.id])
+    .filter(Boolean)
+    .join(" / ");
+
+  // Questo è il ciclo a cui mi riferivo:
+  // crea una scheda per ogni lingua disponibile.
+  orderedLanguageOptions.forEach(opt => {
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "chgenv-language-card";
+    card.title = opt.label;
+    card.setAttribute("aria-label", `Seleziona ${opt.language.name}`);
+    card.setAttribute("aria-pressed", "false");
+
+    const flag = document.createElement("span");
+    flag.className = "chgenv-language-flag";
+    flag.setAttribute("aria-hidden", "true");
+    flag.innerHTML = getCHGENVLanguageFlagSVG(opt.language.id);
+
+    const name = document.createElement("span");
+    name.className = "chgenv-language-name";
+    name.textContent = opt.language.name;
+
+    card.appendChild(flag);
+    card.appendChild(name);
+
+    // Ripristina l'evidenziazione della lingua salvata.
+    if (opt.language.id === previouslySelected) {
+      card.classList.add("chgenv-language-card-selected");
+      card.setAttribute("aria-pressed", "true");
+      status.textContent = `Lingua selezionata: ${opt.language.name}`;
+    }
+
+    card.onclick = () => {
+      saveCHGENVSelectedLanguage(opt.language.id);
+
+      cards.querySelectorAll(".chgenv-language-card").forEach(item => {
+        item.classList.remove("chgenv-language-card-selected");
+        item.setAttribute("aria-pressed", "false");
+      });
+
+      card.classList.add("chgenv-language-card-selected");
+      card.setAttribute("aria-pressed", "true");
+      status.textContent = `Lingua selezionata: ${opt.language.name}`;
+
+      pressKey(opt.key);
+    };
+
+    cards.appendChild(card);
+  });
+
+  if (!status.textContent) {
+    status.textContent = "Seleziona una lingua";
+  }
+
+  section.appendChild(heading);
+  section.appendChild(status);
+  section.appendChild(cards);
+
+  return section;
+}
+// <<< @END v1.0.6
+
+
 function renderCHGENVOptionTiles(options) {
   const container = document.getElementById("container5250CustomMenuOptions");
   if (!container) return;
@@ -131,6 +335,11 @@ function renderCHGENVOptionTiles(options) {
   let specialButton = null;
 
   const decadeColumns = new Map();
+
+  // >>> @Start v1.0.6
+  // Raccoglie le opzioni lingua per renderizzarle come schede.
+  const languageOptions = [];
+  // <<< @END v1.0.6
 
   options.forEach(opt => {
     const label = opt.label || "";
@@ -163,6 +372,19 @@ function renderCHGENVOptionTiles(options) {
       specialButton = opt;
       return;
     }
+
+    // >>> @Start v1.0.6
+    // Riconosce le lingue e le esclude dai normali pulsanti.
+    const language = getCHGENVLanguage(label);
+
+    if (language) {
+      languageOptions.push({
+        ...opt,
+        language
+      });
+      return;
+    }
+    // <<< @END v1.0.6
 
     const parsedNumber = parseInt(number, 10);
     if (Number.isNaN(parsedNumber)) return;
@@ -201,6 +423,16 @@ function renderCHGENVOptionTiles(options) {
 
     currentColumn.appendChild(button);
   });
+
+  // >>> @Start v1.0.6
+  // Inserisce le schede lingua prima dei gruppi numerati.
+  if (languageOptions.length) {
+    const languageSection =
+      renderCHGENVLanguageCards(languageOptions);
+
+    container.insertBefore(languageSection, columnsWrapper);
+  }
+  // <<< @END v1.0.6
 
   if (specialButton) {
     const topWrapper = document.createElement("div");
@@ -330,6 +562,17 @@ function getCHGENVGroupTitle(options, decade) {
 
   return common || cleanedLabels[0] || `Gruppo ${decade}`;
 }
+
+
+// >>> @Start v1.0.6
+function saveCHGENVSelectedLanguage(languageId) {
+  setDataStorage("chgenvSelectedLanguage", languageId, "session");
+}
+
+function getCHGENVSelectedLanguage() {
+  return getDataStorage("chgenvSelectedLanguage", "session") || "";
+}
+// <<< @END v1.0.6
 
 function getCommonCHGENVText(labels) {
   if (!labels.length) return "";

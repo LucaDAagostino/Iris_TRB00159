@@ -203,3 +203,132 @@
 .chgenv-btn-special i {
   font-size: 2.8rem;
 }
+
+/* >>> @Start v1.0.6 — schede selezione lingua */
+
+#container5250CustomMenuOptions .chgenv-language-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#container5250CustomMenuOptions .chgenv-language-heading {
+  margin: 0 0 2rem;
+  color: #174c49;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#container5250CustomMenuOptions .chgenv-language-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+#container5250CustomMenuOptions .chgenv-language-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  min-width: 0;
+  min-height: 14rem;
+  margin: 0;
+  padding: 2rem 1rem;
+
+  color: #174c49;
+  background: #fff;
+  border: 3px solid #dfebe7;
+  border-radius: 1.5rem;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#container5250CustomMenuOptions .chgenv-language-card:hover,
+#container5250CustomMenuOptions .chgenv-language-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: #13845a;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 12%);
+  outline: none;
+}
+
+#container5250CustomMenuOptions .chgenv-language-flag {
+  display: block;
+  width: 166px;
+  height: 100px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px rgb(0 0 0 / 14%);
+}
+
+#container5250CustomMenuOptions .chgenv-language-name {
+  color: #174c49;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Adattamento per smartphone */
+@media (max-width: 700px) {
+  #container5250CustomMenuOptions .chgenv-language-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #container5250CustomMenuOptions .chgenv-language-card {
+    min-height: 11rem;
+  }
+}
+
+.chgenv-language-flag {
+  display: block;
+  width: 110px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 7px;
+  box-shadow: 0 3px 10px #0002;
+}
+
+.chgenv-language-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#container5250CustomMenuOptions .chgenv-language-status {
+  min-height: 1.5rem;
+  margin: 0 0 1rem;
+  color: #174c49;
+  font-weight: 600;
+  text-align: center;
+}
+
+#container5250CustomMenuOptions .chgenv-language-card-selected {
+  position: relative;
+  border-color: #13845a;
+  background-color: #eef8f2;
+  box-shadow: 0 0 0 3px rgb(19 123 82 / 18%);
+}
+
+#container5250CustomMenuOptions .chgenv-language-card-selected::after {
+  content: "✓ Selezionata";
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #13845a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* <<< @End v1.0.6 */

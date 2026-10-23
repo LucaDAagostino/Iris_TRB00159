@@ -5,7 +5,6 @@ redraw = function () {
     const hasNextPage = state === 'segue';
     const isLastPage = state === 'fine';
 
-
     let containerElement = document.createElement("div");
     containerElement.id = "container5250Custom";
     containerElement.className = "container5250";
@@ -141,6 +140,7 @@ redrawProgramAppCoreList = function () {
     const rowStartRemove = removeInstructionalRows(mapFormatOther);
     removeUnpreservedContainer(rowStartRemove, mapFormatDetail);
     removeUnusedContainer(mapFormat, mapFormatDetail, mapFormatOther);
+
 
     if (mapFormatSubfile.size !== 0) {
         let offset = offsetRow;
@@ -312,26 +312,33 @@ function handleNextClick() {
     pressKey('PageDown');
 }
 
-onClickSubfileOption = function (row, pressKeyValue) {
-    try {
-        if (!pressKeyValue) pressKeyValue = (typeof getPressKeyValue === 'function') ? getPressKeyValue() : '5';
-    } catch (_) {
-        pressKeyValue = '5';
-    }
+onClickSubfileOption = function (row) {
 
     const prefix = `I_${row}_`;
-    const arr = Array.isArray(window.arraySubfileOptions) ? window.arraySubfileOptions : [];
+
+    const arr = Array.isArray(window.arraySubfileOptions)
+        ? window.arraySubfileOptions
+        : [];
+
     let currentEl = null;
 
-    // 1) prova a prendere dall’array globale
+    // Cerca il campo opzione della riga
     for (const el of arr) {
-        if (el && el.id && el.id.startsWith(prefix)) { currentEl = el; break; }
+        if (el && el.id && el.id.startsWith(prefix)) {
+            currentEl = el;
+            break;
+        }
     }
 
-    // 2) fallback: cerca nel DOM un input marcato come subfile-option su quella riga
+    // Fallback sul DOM
     if (!currentEl) {
-        currentEl = document.querySelector(`[data-subfile-option="1"][id^="${prefix}"]`)
-            || document.querySelector(`input[id^="${prefix}"]`);
+        currentEl =
+            document.querySelector(
+                `[data-subfile-option="1"][id^="${prefix}"]`
+            ) ||
+            document.querySelector(
+                `input[id^="${prefix}"][dataoption]`
+            );
     }
 
     if (!currentEl) {
@@ -340,31 +347,113 @@ onClickSubfileOption = function (row, pressKeyValue) {
 
     const currentId = currentEl.id;
 
-    // allinea il comportamento originale: azzera gli altri
-    if (arr.length) {
-        arr.forEach(el => {
-            if (el && el.id && el.id !== currentId) {
-                try { pui.set(el.id, null); } catch (_) { }
+    /*
+     * Valore standard = 5.
+     *
+     * Diventa 1 SOLO se nel dataoption esiste
+     * un codice "1" oppure "01".
+     *
+     */
+    let pressKeyValue = "5";
+
+    const dataoptions =
+        currentEl.getAttribute("dataoption") || "";
+
+    if (dataoptions) {
+
+        const options = dataoptions.split(";");
+
+        const hasOption1 = options.some(raw => {
+
+            try {
+
+                const option = JSON.parse(raw);
+
+                const code =
+                    String(option?.code ?? "").trim();
+
+                return code === "1" || code === "01";
+
+            } catch (_) {
+                return false;
             }
+
         });
-    } else {
-        document.querySelectorAll(`[id^="${prefix}"]`).forEach(el => {
-            if (el.id !== currentId) { try { pui.set(el.id, null); } catch (_) { } }
-        });
+
+        if (hasOption1) {
+            pressKeyValue = "1";
+        }
     }
 
-    // set valore (1 o 5) e invia Enter
-    let curVal;
-    try { curVal = pui.get(currentId); } catch (_) { curVal = currentEl.value; }
+    /*
+     * Azzera eventuali opzioni presenti
+     * sulle altre righe.
+     */
+    if (arr.length) {
 
-    if (curVal == null || curVal === '') {
-        const v = (pressKeyValue == '1' || pressKeyValue === 1) ? '1' : '5';
-        try { pui.set(currentId, v); } catch (_) { currentEl.value = v; }
-    } else {
-        try { pui.set(currentId, curVal); } catch (_) { }
+        arr.forEach(el => {
+
+            if (
+                el &&
+                el.id &&
+                el.id !== currentId
+            ) {
+
+                try {
+                    pui.set(el.id, null);
+                } catch (_) {
+                    try {
+                        el.value = "";
+                    } catch (_) { }
+                }
+
+            }
+
+        });
+
     }
 
-    try { pressKey('Enter'); } catch (_) { }
+    /*
+     * Legge il valore attuale.
+     *
+     * Se l'utente ha già scritto qualcosa
+     * NON lo sovrascriviamo.
+     */
+    let curVal = null;
+
+    try {
+        curVal = pui.get(currentId);
+    } catch (_) {
+        curVal = currentEl.value;
+    }
+
+    if (
+        curVal == null ||
+        String(curVal).trim() === ""
+    ) {
+
+        try {
+
+            pui.set(
+                currentId,
+                pressKeyValue
+            );
+
+        } catch (_) {
+
+            currentEl.value = pressKeyValue;
+
+        }
+
+    }
+
+    /*
+     * Invio ENTER
+     */
+    try {
+        pressKey("Enter");
+    } catch (_) { }
+
 };
 
 
@@ -768,7 +857,6 @@ function cleanSubfileTableFromNonInputs() {
 }
 
 function enhanceSubfileInputs() {
-    const pressKeyValue = (typeof getPressKeyValue === 'function') ? getPressKeyValue() : '5';
     let zIndex = 1050;
 
     arraySubfileOptions = [];
@@ -862,6 +950,7 @@ function enhanceSubfileInputs() {
 
         // click sulla riga → onClickSubfileOption(rowIdx, pressKeyValue)
         const tr = input.closest('tr');
+
         if (tr && !tr.dataset._rowClickBound) {
             let rowIdx = null;
             if (/^subfileRow_\d+$/.test(tr.id)) {
@@ -869,11 +958,16 @@ function enhanceSubfileInputs() {
             } else if (typeof getRow === 'function') {
                 rowIdx = getRow(input.id || input);
             }
-
             if (rowIdx != null && typeof onClickSubfileOption === 'function') {
                 tr.addEventListener('click', (ev) => {
-                    if (ev.target.closest('input,button,ul.dropdown-menu,.position-relative')) return;
-                    onClickSubfileOption(rowIdx, pressKeyValue);
+                    if (
+                        ev.target.closest(
+                            'input,button,ul.dropdown-menu,.position-relative'
+                        )
+                    ) {
+                        return;
+                    }
+                    onClickSubfileOption(rowIdx);
                 }, { capture: true });
                 tr.style.cursor = 'pointer';
                 tr.dataset._rowClickBound = '1';
@@ -1166,49 +1260,6 @@ function getDetailRowElements(mapFormatSubfile) {
     return detailRowMap;
 }
 
-function getDetailRowElements_delme(mapFormatSubfile) {
-    const rowToCols = new Map();
-    const rowToElements = new Map();
-
-    // 1. Mappa riga → Set di colonne e lista di elementi
-    for (const [key, elem] of mapFormatSubfile.entries()) {
-        const row = getRow(elem);
-        const col = getCol(elem);
-
-        if (!rowToCols.has(row)) {
-            rowToCols.set(row, new Set());
-            rowToElements.set(row, []);
-        }
-
-        rowToCols.get(row).add(col);
-        rowToElements.get(row).push(elem);
-    }
-
-    // 2. Ordina le righe
-    const sortedRows = Array.from(rowToCols.keys()).sort((a, b) => a - b);
-    if (sortedRows.length === 0) return new Map();
-
-    const detailRowMap = new Map();
-    const referenceRow = sortedRows[0];
-    const refCols = Array.from(rowToCols.get(referenceRow)).sort((a, b) => a - b);
-
-    // 3. Confronta ogni riga con la PRIMA
-    for (let i = 1; i < sortedRows.length; i++) {
-        const currentRow = sortedRows[i];
-        const currentCols = Array.from(rowToCols.get(currentRow)).sort((a, b) => a - b);
-
-        const areSameStructure =
-            currentCols.length === refCols.length &&
-            currentCols.every((col, idx) => col === refCols[idx]);
-
-        if (!areSameStructure) {
-            detailRowMap.set(currentRow, rowToElements.get(currentRow));
-        }
-    }
-
-    return detailRowMap;
-}
-
 function renderDropdownFromDataOptions(inputElement) {
     const container = inputElement.closest('.position-relative');
     const dropdown = container?.querySelector('ul.dropdown-menu');
@@ -1483,45 +1534,118 @@ function extractMainRowStructure(mapFormatSubfile) {
 
 
 
-// --- PressKey cache (1 oppure 5) ---
+// --- Ultima opzione predefinita calcolata (1 oppure 5) ---
 window.optionPressKeyValue = (typeof window.optionPressKeyValue === "string") ? window.optionPressKeyValue : null;
 
 /**
- * Cerca un header/testo che inizi con "1=" e memorizza UNA SOLA VOLTA il valore:
- * - "1" se trovato
- * - "5" altrimenti
+ * Correzione del 12/09/2026: riconosce l'opzione 1 anche nell'elenco
+ * dataoption di VDSCT, con codice "1" o "01", quando manca il testo "1=".
+ * Il valore predefinito viene ricalcolato sulle opzioni correnti per evitare
+ * di mantenere quello della schermata precedente; in assenza di 1 usa 5.
+ * Non modifica il valore digitato manualmente nel campo.
+ *
+ * Cerca il codice 1 nelle opzioni di VDSCT (anche come "01").
+ * Mantiene il riconoscimento del testo "1=" come fallback.
  */
 
 function getOptionPressKeyValue(root = document) {
-    window.optionPressKeyValue = null;  // forzo ricalcolo
 
-    if (typeof window.optionPressKeyValue === "string" && window.optionPressKeyValue.length) {
-        return window.optionPressKeyValue;
-    }
     const scope = root || document;
+
     let found = false;
 
-    // Candidati ragionevoli dentro e fuori recordTypeC
-    const candidates = scope.querySelectorAll(
-        '.recordTypeC [fmtname], .recordTypeC [fmtName], .recordTypeC div, ' +
-        '[fmtname], [fmtName], [fldname], div'
-    );
+    /*
+     * Prima controllo direttamente il dataoption
+     * del campo VDSCT.
+     *
+     * Sono validi SOLO: 1 - 01
+     */
+    const optionFields =
+        scope.querySelectorAll(
+            '[fldname="VDSCT"][dataoption]'
+        );
 
-    for (const el of candidates) {
-        const t = (el.textContent || "").trim().replace(/\s+/g, " ");
-        // accetta "1=", "1 =" ecc.
-        if (/^1\s*=/.test(t)) { found = true; break; }
+    for (const field of optionFields) {
+
+        const options =
+            (field.getAttribute("dataoption") || "")
+                .split(";");
+
+        found = options.some(raw => {
+
+            try {
+
+                const option = JSON.parse(raw);
+
+                const code =
+                    String(option?.code ?? "").trim();
+
+                return (
+                    code === "1" ||
+                    code === "01"
+                );
+
+            } catch (_) {
+
+                return false;
+
+            }
+
+        });
+
+        if (found) {
+            break;
+        }
+
     }
 
-    window.optionPressKeyValue = found ? "1" : "5";
+    /*
+     * Fallback:
+     * cerca eventuale indicazione testuale
+     *
+     * 1=
+     * 1 =
+     */
+    if (!found) {
+
+        const candidates =
+            scope.querySelectorAll(
+                '.recordTypeC [fmtname], ' +
+                '.recordTypeC [fmtName], ' +
+                '.recordTypeC div, ' +
+                '[fmtname], ' +
+                '[fmtName], ' +
+                '[fldname], ' +
+                'div'
+            );
+
+        for (const el of candidates) {
+
+            const text =
+                (el.textContent || "")
+                    .trim()
+                    .replace(/\s+/g, " ");
+
+            if (/^1\s*=/.test(text)) {
+
+                found = true;
+                break;
+
+            }
+
+        }
+
+    }
+
+    window.optionPressKeyValue =
+        found ? "1" : "5";
+
     return window.optionPressKeyValue;
 }
 
-/** Ritorna sempre il valore cache; se assente, lo calcola ora */
+/** Ricalcola sulle opzioni correnti, senza riutilizzare la schermata precedente. */
 function getPressKeyValue() {
-    return (typeof window.optionPressKeyValue === "string" && window.optionPressKeyValue.length)
-        ? window.optionPressKeyValue
-        : getOptionPressKeyValue(document);
+    return getOptionPressKeyValue(document);
 }
 
 
@@ -2316,36 +2440,38 @@ function setIconAndAttributes(el, fldUse, fldType) {
     // Caso "standard" 
     if (hasListOrExpand) {
         if (fldUse !== "O") {
-            if (hasExpand) {
+            // [1.0.5]
+            if (hasExpand && hasList && normalizedValue === ">") {
+                icon = "fa fa-search";
+                setDoF4(el);
+            } else if (hasExpand) {
                 if (!isNullValue) {
                     icon = "fa-regular fa-eye";
-                    el.setAttribute("doF6", "1");
+                    setDoF6(el);
                 } else {
                     icon = "fa fa-search";
-                    el.setAttribute("doF4", "1");
+                    setDoF4(el);
                 }
             } else {
                 icon = "fa fa-search";
-                el.setAttribute("doF4", "1");
+                setDoF4(el);
             }
+
         } else {
             if (hasExpand && !isNullValue) {
-                el.setAttribute("doF6", "1");
+                setDoF6(el);
             } else {
-                el.setAttribute("doF4", "1");
+                setDoF4(el);
             }
         }
-
-        // caso speciale: valore "<"
         if (normalizedValue === "<") {
             el.style.display = "none";
             icon = "fa fa-bolt mt-2";
             iconClass = "btn-primary btnDynamic";
         }
-
-        // caso speciale: valore ">"
         if (normalizedValue === ">") {
             if (el.getAttribute("doF4") === "1") {
+
                 el.style.display = "none";
                 icon = "fa fa-search mt-2";
                 iconClass = "btn-primary btnDynamic";
@@ -2368,6 +2494,16 @@ function setIconAndAttributes(el, fldUse, fldType) {
     }
 
     return { icon, iconClass };
+}
+
+function setDoF4(el) {
+    el.setAttribute("doF4", "1");
+    el.removeAttribute("doF6");
+}
+
+function setDoF6(el) {
+    el.setAttribute("doF6", "1");
+    el.removeAttribute("doF4");
 }
 
 

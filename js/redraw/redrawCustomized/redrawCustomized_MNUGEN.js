@@ -108,7 +108,7 @@ function renderOptionTiles(options) {
 
         // Sovrascrive il click per garantire: set + Enter
         button.onclick = () => {
-            setFieldValue(properties.idCommandLine, valore);
+            setFieldValue(properties.idCommandLine, valore, true);
             pressKey("Enter");
         };
 

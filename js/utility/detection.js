@@ -191,22 +191,6 @@ function areRowSimilar(struct1, struct2) {
     return true;
 }
 
-function setFieldValue(id, value) {
-    if (id === null || value === null) return;
-    const element = document.getElementById(id);
-    if (element) {
-        element.value = value;
-        if (element.tagName === "INPUT") {
-            element.value = value;
-            pui.set(id, value);
-        }
-        if (element.tagName === "DIV") {
-            element.textContent = value;
-            pui.set(id, value);
-        }
-    }
-}
-
 function detectSegueOrFine(root) {
     root = root || document.getElementById('5250');
     if (!root) return null;

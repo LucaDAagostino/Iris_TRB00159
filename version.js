@@ -1,9 +1,9 @@
 const APP_VERSION = {
   major: 1,
   minor: 0,
-  patch: 3,
+  patch: 6,
   label: "",
-  buildDate: "2026-06-25"
+  buildDate: "2026-10-23"
 };
 
 function getAppVersion() {

@@ -30,6 +30,7 @@
     --bs-color-header: var(--bs-color-material-800);
     --bs-color-footer: var(--bs-color-material-700);
     --bs-color-window-header: var(--bs-color-material-600);
+    --bs-color-window-body: white;
     --bs-color-window-footer: var(--bs-color-material-200);
     --bs-color-program-header: var(--bs-color-material-600);
     --bs-color-program-footer: var(--bs-color-material-200);

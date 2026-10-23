@@ -140,19 +140,20 @@ function parseId(id) {
     return { id, row, col };
 }
 
-function setFieldValue(id, value) {
+function setFieldValue(id, value, updatePui = false) {
     if (id === null || value === null) return;
     const element = document.getElementById(id);
     if (element) {
         if (element.tagName === "INPUT") {
             element.value = value;
-            pui.set(id, value);
+            if (updatePui) {
+                pui.set(id, value);
+            }
         } else if (element.tagName === "DIV") {
             element.textContent = value;
-            pui.set(id, value);
-        } else {
-            // fallback generico
-            element.value = value;
+            if (updatePui) {
+                pui.set(id, value);
+            }
         }
     }
 }

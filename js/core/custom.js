@@ -285,6 +285,15 @@ hideRemoveElements = function () {
 }
 
 resetWindow = function () {
+    // (v.1.0.4) Rimuove le finestre sintetiche della skin prima che Genie analizzi la
+    // nuova videata. Il controllo su layerInfo gestisce anche eventuali
+    // window1 creati dalla versione precedente della skin. 
+    document.querySelectorAll('form[name="main"] > [id^="window"]').forEach(function (windowElement) {
+        if (windowElement.dataset.customSyntheticWindow === "1" || windowElement.layerInfo == null) {
+            windowElement.remove();
+        }
+    });
+
     let containerWindow = document.getElementById("containerWindow");
     if (containerWindow !== null) {
         let containerWindowElements = containerWindow.getElementsByTagName("div");

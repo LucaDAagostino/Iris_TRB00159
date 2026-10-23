@@ -197,6 +197,22 @@ window.createWindowFromColons = function () {
                 form.appendChild(win);
             }
 
+            // (v.1.0.4) Questa finestra viene costruita dalla skin e usa gli identificativi
+            // riservati di Genie (window1 / _W1). Genie si aspetta quindi di
+            // trovare anche layerInfo, come avviene per le finestre native.
+            const multX = Number(pui?.multX) || 1;
+            const multY = Number(pui?.multY) || 1;
+            const outerWidth = Math.max(1, Math.round(bounds.width / multX));
+            const outerHeight = Math.max(1, Math.round(bounds.height / multY));
+
+            win.layerInfo = {
+                row: Math.max(0, Math.round(bounds.top / multY)),
+                col: Math.max(0, Math.round(bounds.left / multX)),
+                width: Math.max(1, outerWidth - 2),
+                height: Math.max(1, outerHeight - 2)
+            };
+            win.dataset.customSyntheticWindow = "1";
+
             win.style.position = "absolute";
             win.style.left = bounds.left + "px";
             win.style.top = bounds.top + "px";
@@ -205,7 +221,7 @@ window.createWindowFromColons = function () {
             win.style.boxSizing = "border-box";
             win.style.pointerEvents = "auto";
             win.style.zIndex = "1000";
-            win.style.background = "transparent";
+            win.style.background = "var(--bs-color-window-body)"
 
             return win;
         }

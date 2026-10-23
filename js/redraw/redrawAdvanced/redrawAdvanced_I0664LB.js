@@ -89,7 +89,7 @@ function redrawAdvanced_I0664LB() {
 
   const ta = document.createElement("textarea");
   ta.id = TEXTAREA_ID;
-  ta.lassList.add("form-control formControl");
+  ta.classList.add("form-control", "formControl");
   ta.autocomplete = "off";
   ta.spellcheck = false;
   ta.style.width = "100%";

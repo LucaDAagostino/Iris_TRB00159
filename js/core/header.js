@@ -659,7 +659,7 @@ populateMenuInfoItems = function () {
     versionRow.addEventListener("click", async function () {
 
       try {
-        const changelogUrl = "/profoundui/userdata/genie skins/" + pui.skin + "/docs/Version/CHANGELOG.md";
+        const changelogUrl = "/profoundui/userdata/genie skins/" + pui.skin + "/docs/Versioning/CHANGELOG.md";
         const response = await fetch(changelogUrl);
 
         if (!response.ok) {
